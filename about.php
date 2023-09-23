@@ -125,7 +125,7 @@ if (!isset($_SESSION["user"])) {
                         No review is needed for this wonderful place..! My favorite
                         place in Bengaluru. Given a choice I would go there daily..!
                         </p>
-                        <p id="reviewrName" class="fw-bolder">Mahesh Yadav</p>
+                        <p id="reviewrName" class="fw-bolder"></p>
                         <img src="assets/userReview.jpeg" id="reviewerImage" alt="" />
                     </div>
                 </div>
