@@ -1,6 +1,6 @@
 <?php
 require "config.php";
-require_one "send_email.php";
+require "send_email.php";
 
 session_start();
 if (!isset($_SESSION["user"])) {
