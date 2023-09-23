@@ -126,7 +126,7 @@ if (!isset($_SESSION["user"])) {
                         place in Bengaluru. Given a choice I would go there daily..!
                         </p>
                         <p id="reviewrName" class="fw-bolder">Mahesh Yadav</p>
-                        <img src="assets/Mahesh Yadav G (PHOTO).jpeg" id="reviewerImage" alt="" />
+                        <img src="assets/userReview.jpeg" id="reviewerImage" alt="" />
                     </div>
                 </div>
             </div>
@@ -227,7 +227,7 @@ if (!isset($_SESSION["user"])) {
                 </div>
             </div>
             <hr />
-            <p class="text-center">Created by Mahesh</p>
+            <p class="text-center">Created by</p>
         </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"

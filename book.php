@@ -1,5 +1,7 @@
 <?php
 require "config.php";
+require "send_email.php";
+
 session_start();
 if (!isset($_SESSION["user"])) {
     header("location:login.php");
@@ -197,7 +199,25 @@ if (!isset($_SESSION["user"])) {
                 <?php if (isset($_POST["booknow"])) {
                     $bookinginfo = "INSERT INTO customerbookings(`custFname`,`custLname`,`custEmail`,`custPhone`,`custCity`,`custState`,`cDate`,`cGuestNo`,`plans`) VALUES ('$_POST[fname]','$_POST[lname]','$_POST[email]','$_POST[phone]','$_POST[city]','$_POST[state]','$_POST[date]','$_POST[guest]','$_POST[plans]')";
                     if (mysqli_query($conn, $bookinginfo)) {
-                        echo "<div class='alert-info alert' role='alert'>Your have successfully booked your ticket at Aquatica! Direct to <span><a href='payments.php' class='btn-sm btn-outline-dark'>Payments</a></span></div>";
+                        $bookingDetails = [
+                                        'fname' => $_POST['fname'],
+                                        'lname' => $_POST['lname'],
+                                        'email' => $_POST['email'],
+                                        'phone' => $_POST['phone'],
+                                        'city' => $_POST['city'],
+                                        'state' => $_POST['state'],
+                                        'date' => $_POST['date'],
+                                        'guest' => $_POST['guest'],
+                                        'plans' => $_POST['plans']
+                                    ];
+                        // Send the booking confirmation email
+                        $emailSent = sendBookingConfirmationEmail($bookingDetails);
+
+                        if ($emailSent) {
+                            echo "<div class='alert-info alert' role='alert'>Booking successful! You will receive an email shortly with your booking details. Please proceed to <span><a href='payments.php' class='btn-sm btn-outline-dark'>Payments</a></span></div>";
+                        } else {
+                            echo "<div class='alert-danger alert' role='alert'>Booking successful, but there was an issue sending the confirmation email. Please check your email later for booking details and proceed to <span><a href='payments.php' class='btn-sm btn-outline-dark'>Payments</a></span></div>";
+                        }
                     } else {
                         echo "<script>alert('There was an error while booking up..! try again.!')</script>";
                     }

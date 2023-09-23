@@ -1,5 +1,40 @@
 <?php
-require "config.php"; ?>
+require "config.php"; 
+
+$cities_of_karnataka = array(
+    "Bengaluru (Bangalore)",
+    "Mysuru (Mysore)",
+    "Hubballi (Hubli)",
+    "Mangaluru (Mangalore)",
+    "Belagavi (Belgaum)",
+    "Davanagere",
+    "Bellary (Ballari)",
+    "Gulbarga (Kalaburagi)",
+    "Tumakuru (Tumkur)",
+    "Shimoga (Shivamogga)",
+    "Raichur",
+    "Bidar",
+    "Hassan",
+    "Dharwad",
+    "Bagalkot",
+    "Chitradurga",
+    "Chikkamagaluru",
+    "Udupi",
+    "Bijapur (Vijayapura)",
+    "Gadag",
+    "Haveri",
+    "Kolar",
+    "Mandya",
+    "Chickballapur (Chikkaballapur)",
+    "Ramanagara",
+    "Karwar",
+    "Chamarajanagar",
+    "Kodagu (Coorg)",
+    "Yadgir",
+    "Koppal"
+);
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -80,13 +115,20 @@ require "config.php"; ?>
                         </div>
                         <div class="row">
                             <div class="col-md-4 col-sm-12">
-                                <input type="tel" class="form-control" name="phone" placeholder="Phone No"
-                                    pattern="[0-9]{10}" required />
-                                <div class="invalid-feedback">Please enter a valid 10 digit phone number</div>
+                                <input type="tel" class="form-control" name="phone" id="phone" placeholder="Phone No"
+                                    required oninput="validatePhoneNumber()" />
                             </div>
                             <div class="col-md-4 col-sm-6">
-                                <input type="text" class="form-control" placeholder="City" name="city" required />
+                                <select name="city" class="form-control" required>
+                                    <option value="">Select City</option>
+                                    <?php
+                                        foreach ($cities_of_karnataka as $city) {
+                                        echo "<option value='$city'>$city</option>";
+                                        }
+                                    ?>
+                                </select>
                             </div>
+
                             <div class="col-md-4 col-sm-6">
                                 <select name="state" placeholder="State" class="form-control" required>
                                     <option>Select state</option>
@@ -151,9 +193,24 @@ require "config.php"; ?>
         <hr
             style="width:100%; height: 2%; background-color: #4158D0;background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);">
     </main>
+
+    <script>
+    function validatePhoneNumber() {
+        var phoneInput = document.getElementById('phone').value;
+        var phonePattern = /[0-9]{10}$/;
+        console.log(phonePattern.test(phoneInput));
+        if (phonePattern && !phonePattern.test(phoneInput)) {
+            document.getElementById('phone').setCustomValidity('Please enter a valid 10-digit numeric phone number');
+        } else {
+            document.getElementById('phone').setCustomValidity('');
+        }
+    }
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
+
 </body>
 
 </html>

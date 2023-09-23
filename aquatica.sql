@@ -38,14 +38,8 @@ CREATE TABLE `adminlogindetails` (
 --
 
 INSERT INTO `adminlogindetails` (`adminId`, `adminUsername`, `adminPassword`) VALUES
-(1, 'yadav@', '12345'),
-(2, 'mahesh@', '67890'),
-(49, 'mahesh2@gmail.com', '12345jed'),
-(50, 'mahesh2@gmail.com', '12345jed'),
-(51, 'ahe@gmail.com', '12345'),
-(52, 'gokul@gmail.com', '12345Gokul'),
-(53, 'npg@gmail.com', '12345'),
-(54, 'dsi@gmail.com', 'Maheu3g3uie121@');
+(1, 'admin', '12345'),
+
 
 -- --------------------------------------------------------
 
@@ -71,20 +65,7 @@ CREATE TABLE `customerbookings` (
 --
 
 INSERT INTO `customerbookings` (`BookingId`, `custFname`, `custLname`, `custEmail`, `custPhone`, `custCity`, `custState`, `cDate`, `cGuestNo`, `plans`) VALUES
-(4, 'ee', 'e', 's@g.con', 0, 'wjjw', 'Goa', '2023-03-21', 1, '1'),
-(5, 'wd', 'd', 'd@gmail.com', 2147483647, 'Bengaluru', 'Arunach Pradesh', '2023-03-21', 2, 'Student Offer'),
-(6, 'Mahesh', 'Yadav G', 'maheshyadav0170@gmail.com', 2147483647, 'Bengaluru', 'Madhya Pradesh', '2023-03-21', 2, 'Student Offer'),
-(7, 'wd', 'd', 'd@gmail.com', 2147483647, 'Bengaluru', 'Arunach Pradesh', '2023-03-21', 2, 'Student Offer'),
-(8, 'Sirified', 'S', 'sirisha@gmail.com', 2147483647, 'Bengaluru', 'Karnataka', '2023-03-22', 2, 'Early Bird Offers'),
-(9, 'Mahesh', 'Yadav', 'gokul@gmail.com', 2147483647, 'Bengaluru', 'Himachal Pradesh', '2023-04-12', 1, 'Wonder Wednesday'),
-(10, 'Mahesh', 'Yadav', 'gokul@gmail.com', 2147483647, 'Bengaluru', 'Himachal Pradesh', '2023-04-12', 1, 'Wonder Wednesday'),
-(11, 'Mahesh', 'Yadav', 'gokul@gmail.com', 2147483647, 'Bengaluru', 'Himachal Pradesh', '2023-04-12', 1, 'Wonder Wednesday'),
-(12, 'Mahesh', 'Yadav', 'gokul@gmail.com', 2147483647, 'Bengaluru', 'Himachal Pradesh', '2023-04-12', 1, 'Wonder Wednesday'),
-(13, 'Mahesh', 'Yadav', 'gokul@gmail.com', 2147483647, 'Bengaluru', 'Himachal Pradesh', '2023-04-12', 1, 'Wonder Wednesday'),
-(14, 'Mahesh', 'Yadav', 'gokul@gmail.com', 2147483647, 'Bengaluru', 'Himachal Pradesh', '2023-04-12', 1, 'Wonder Wednesday'),
-(15, 'dh3id', 'eb2ue', 'j3ei@gmaul.c0fie', 2147483647, 'Bengaluru', 'Haryana', '2023-04-18', 1, 'Wonder Wednesday'),
-(16, 'Kaushik', 'Yadav', 'k@gmail.com', 2147483647, 'Bengaluru', 'Jharkhand', '2023-04-14', 1, 'Student Offer'),
-(17, 'Kaushik', 'Yadav', 'k@gmail.com', 2147483647, 'Bengaluru', 'Jharkhand', '2023-04-14', 1, 'Student Offer');
+(4, 'ee', 'e', 's@g.con', 0, 'wjjw', 'Goa', '2023-03-21', 1, '1');
 
 -- --------------------------------------------------------
 
@@ -108,14 +89,7 @@ CREATE TABLE `customerinfo` (
 --
 
 INSERT INTO `customerinfo` (`cId`, `cFname`, `cLname`, `cEmail`, `cPassword`, `cPhone`, `cCity`, `cState`) VALUES
-(41, 'Mahesh', 'Yadav G', 'maheshyadav0170@gmail.com', '12345', 4294967295, 'Blr', 'Karnataka'),
-(44, 'mm', 'mm', 'npg@gmail.com', '12345', 0, 'rr', 'Andhra Pradesh'),
-(45, 'Mahesh', 'Yadav G', 'yadav@gmail.com', 'Mahesh@0160', 0, 'Bengaluru', 'Karnataka'),
-(47, 'jkbr3r', '3jeb3', 'Admin@gmail.come', 'passwordj2n', 4294967295, 'e', 'Select state'),
-(48, 'Gokul', 'Yadav', 'gokul@gmail.com', '12345Gokul', 4294967295, 'Bengaluru', 'Karnataka'),
-(49, 'Kaushik', 'Yadav', 'k@gmail.com', 'K1234@', 4294967295, 'Bengaluru', 'Jharkhand'),
-(50, 'Makd3o', 'ud g7ef', 'k@gmail.cube', 'K1234@', 8787878787, 'Bende', 'Gujarat');
-
+(41, 'your first name', 'your last name', 'yourname@gmail.com', '12345', 4294967295, 'Blr', 'Karnataka');
 --
 -- Indexes for dumped tables
 --
